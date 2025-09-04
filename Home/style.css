@@ -1,33 +1,131 @@
-*{
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #B23A3A;
     color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
-.s1{
+/* Seção principal */
+.s1 {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .img-s1 {
     width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    filter: brightness(0.7);
 }
 
-img {
-    float: left;
-    width:  250px;
-    height: 150px;
+.title {
+    font-size: 3rem;
+    margin-top: -3rem;
+    font-weight: bold;
+}
+
+.frase {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.line {
+    width: 50%;
+    border: 1px solid white;
+    margin: auto;
+}
+
+/* Cards */
+section:not(.s1) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.card {
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.top-card img {
+    width: 100%;
+    height: 180px;
     object-fit: cover;
+}
+
+.bottom-card {
+    padding: 1rem;
+    text-align: center;
+}
+
+.bottom-card h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    color: #B23A3A;
+}
+
+.bottom-card p {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Botão */
+button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    background-color: white;
+    color: #B23A3A;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2rem 0;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e5e5e5;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .title {
+        font-size: 2rem;
+        margin-top: -2rem;
+    }
+
+    .frase {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    section:not(.s1) {
+        padding: 1rem;
+        gap: 1rem;
+    }
 }
